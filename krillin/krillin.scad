@@ -33,7 +33,7 @@ union() {
 	difference() {
 		translate([137,1,0])
 			cube(size=[1,70,14]);
-		translate([137,33,0])
+		translate([137,28.5,0])
 			cube(size=[1,13,14]); // cutout for usb charging
 	}
 	//right side servo mount (power button)
@@ -68,7 +68,7 @@ module servo_mount() {
 	// push the button, thus everything is translated
 	translate([0,-12,0]) {
 		// short base to connect to servo mount
-		cube(size=[39,12,2]);
+		cube(size=[39,13,2]);
 		// slide sides
 		cube(size=[1,13,14]);
 		translate([14,0,0])
