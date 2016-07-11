@@ -10,52 +10,50 @@ union() {
 
 	//base
 	difference() {
-		cube(size=[138,72,2]);
-		translate([15,16,0])
-			cube(size=[108,39,2]);
+		cube(size=[139,73,2]);
+		translate([13,14,0])
+			cube(size=[113,44,2]);
 	}
 	
 	//left
-	cube(size=[138,1,14]);
+	cube(size=[138,2,14]);
 	//right
 	difference() {
 		translate([0,71,0])
-			cube(size=[138,1,14]); // fill in the corner
+			cube(size=[138,2,14]); // fill in the corner
 		translate([15,71,0])
-			cube(size=[13,1,14]); // cutout for voldown
-		translate([39,71,0])
-			cube(size=[13,1,14]); // cutout for voldown
+			cube(size=[13,2,14]); // cutout for voldown
+		translate([35.5,71,0])
+			cube(size=[20,2,14]); // cutout for voldown
 	}
 	//top
-	translate([0, 1, 0])
-		cube(size=[1,70,14]);
+	translate([0, 0, 0])
+		cube(size=[2,73,14]);
 	//bottom
 	difference() {
-		translate([137,1,0])
-			cube(size=[1,70,14]);
-		translate([137,28.5,0])
-			cube(size=[1,13,14]); // cutout for usb charging
+		translate([137,0,0])
+			cube(size=[2,73,14]);
+		translate([137,30,0])
+			cube(size=[2,13,14]); // cutout for usb charging
 	}
 	//right side servo mount (power button)
-	translate([29,72,0])
+	translate([29,73,0])
 		rotate(180)
 			servo_mount();
 	//right side servo mount (volume buttons)
-	translate([53,93,0])
+	translate([53,94,0])
 		rotate(180)
 			servo_mount();
 	//Connect the volume servo base back to the rest
 	translate([12,72,0])
-		cube(size=[41,26,2]);
+		cube(size=[45.5,26,2]);
 	//short slide next to the frame for alignment
-	translate([38,72,0]) {
+	translate([38.5,72,0]) {
 		// slide sides
-		cube(size=[1,6,14]);
-		translate([14,0,0])
-			cube(size=[1,6,14]);
-		//top
-		translate([0,-1,13])
-			cube(size=[15,7,1]);
+        translate([-5,0,0])
+            cube(size=[2,13,14]);
+		translate([17,0,0])
+			cube(size=[2,13,14]);
 	}
 
 }
@@ -70,36 +68,37 @@ module servo_mount() {
 		// short base to connect to servo mount
 		cube(size=[39,13,2]);
 		// slide sides
-		cube(size=[1,13,14]);
+        translate([-1,0,0])
+            cube(size=[2,14,14]);
 		translate([14,0,0])
-			cube(size=[1,13,14]);
+			cube(size=[2,14,14]);
 		translate([15,0,0])
 			cube(size=[2,1,14]);
 		//top
 		translate([0,0,13])
-			cube(size=[15,13,1]);
+			cube(size=[15,14,1]);
 
 		// This section is just the servo mount by itself
 		//base
 		difference() {
 			translate([17,-13,0])
-				cube(size=[22,13,2]);//y was 13
-			translate([18,-13,0])
-				cube(size=[3.5,13,2]);
+				cube(size=[22,13,2]);
+			translate([18.5,-13,0])
+				cube(size=[3,13,2]);
 		}
-		translate([17,-13,0])
-			cube(size=[1,13,5]);
+		translate([16.5,-13,0])
+			cube(size=[2,13,5]);
 		translate([21.5,-13,0])
-			cube(size=[1,13,5]);
+			cube(size=[2,13,5]);
 		translate([31,-13,0])
-			cube(size=[1,13,5]);
+			cube(size=[2,13,5]);
 		//side walls
-		translate([17,0,0])
-			cube(size=[22,1,15]);
-		translate([17,-14,0])
-			cube(size=[22,1,15]);
+		translate([16,0,0])
+			cube(size=[23,2,14]);
+		translate([16.5,-14.5,0])
+			cube(size=[22.5,2,14]);
 		//back wall
-		translate([38,-14,0])
-			cube(size=[1,14,15]);
+		translate([37,-14.5,0])
+			cube(size=[2,16.5,14]);
 	}
 }
